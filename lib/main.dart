@@ -1,3 +1,5 @@
+import 'package:appexpenses/widgets/user_transaction.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Expenses App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
       home: MyHomePage(),
     );
@@ -22,14 +24,21 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Expenses App'),
-      ),
-      body: Center(
-        child: Text(
-          'You have pushed the button this many times:',
+        appBar: AppBar(
+          title: Text('Expenses App'),
         ),
-      ),
-    );
+        body: SingleChildScrollView(
+            child: Column(
+          children: <Widget>[
+            Container(
+                width: double.infinity,
+                height: 100,
+                child: Card(
+                  color: Colors.blueGrey,
+                  child: Text('Chart!!'),
+                )),
+            UserTransaction()
+          ],
+        )));
   }
 }
